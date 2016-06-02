@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Product.create(:name => "seed gen", :description => "seed gen product", :image_url => "http://fyf.tac-cdn.net/images/products/large/FYF-870.jpg", :colour => "red")
+Product.create(:name => "bazkets", :description => "huh?", :image_url => "https://www.independentfloralnetwork.com/profiles/abloomingbasketflowersandgifts/products/fruit%20baskets/fruitbasket.jpg", :colour => "blue")
+Product.create(:name => "new", :description => "yes", :image_url => "https://www.independentfloralnetwork.com/profiles/abloomingbasketflowersandgifts/products/fruit%20baskets/fruitbasket.jpg", :colour => "black")
+
