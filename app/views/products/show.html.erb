@@ -11,23 +11,22 @@
   <%= @product.description %>
 </p>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-</p>
+
+  <%= image_tag(@product.image_url, class: "img-responsive products") %>
 
 
+
 <p>
-  <strong>Colour</strong>
+  <strong>Colour:</strong>
   <%= @product.colour %>
 </p>
 <p>
-  <strong>Size</strong>
+  <strong>Size:</strong>
   <%= @product.size %>
 </p>
 
 <p>
-  <strong>Size</strong>
+  <strong>Price</strong>
   <%= @product.price %>
 </p>
 

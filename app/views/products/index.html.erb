@@ -4,45 +4,20 @@
 <h1>Fruitree Products</h1>
 
 
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Image url</th>
-        <th>Colour</th>
-        <th>Size</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @products.each do |product| %>
-        <tr>
-          <td><%= product.name %></td>
-          <td><%= product.description %></td>
-          <td><%= product.image_url %></td>
-          <td><%= product.colour %></td>
-          <td><%= product.size %></td>
-          <td><%= link_to 'Show', product %></td>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
 </div>
 
 <div class="container">
   <div class="row">
     <% @products.each do |product| %>
-      <div class="col-sm-2 col-md-4">
-        <h1><%= product.name %></h1>
+      <div class="col-sm-6 col-md-3">
+        <h2><%= product.name %></h2>
         <p><%= product.description %></p>
         <p><%= product.colour %></p>
         <p><%= product.size %></p>
         <p>$<%= product.price %></p>
         <%= image_tag(product.image_url, class: "img-responsive products") %>
+          <div class="row space">
+            <div class="col-xs-12">
         <table class="table">
         <tbody>
           <tr>
@@ -52,23 +27,19 @@
           </tr>
         </tbody>
         </table>
+        </div>
+        </div>
 
       </div>
     <% end %>
   </div>
 </div>
-      <img src
 
 
-<div class="container-fluid">
-  <%= link_to 'New Product', new_product_path %>
+<div class="container space">
+  <%= link_to 'Add New Product', new_product_path %>
 </div>
 
 
-<% paragraph_number = 1 %>
-<% 5.times do %>
-  <p>This paragraph number <%= paragraph_number %></p>
-  <% paragraph_number = paragraph_number + 1 %>
-<% end %>
 
 </div>
