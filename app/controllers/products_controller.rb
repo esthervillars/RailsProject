@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
     @products = Product.all
+    #to specify another layout other than application, this can be done using render layout:
   end
 
   # GET /products/1
