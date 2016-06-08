@@ -34,3 +34,11 @@ body {
 	text-align: right;
 	font-size: 1em;
 }
+
+.carousel-indicators li {
+	background-color: #000;
+}
+
+.carousel-indicators .active {
+	background-color: green;
+}
