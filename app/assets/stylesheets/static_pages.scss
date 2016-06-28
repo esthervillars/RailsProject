@@ -42,3 +42,7 @@ body {
 .carousel-indicators .active {
 	background-color: green;
 }
+
+.carousel-inner>.item>img {
+	margin: 0 auto;
+}
