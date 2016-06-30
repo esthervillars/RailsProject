@@ -40,6 +40,15 @@
           <li><%= link_to 'About', static_pages_about_path %></li>
           <li><%= link_to 'Contact', static_pages_contact_path %></li>
           <li><%= link_to 'Products', products_path %></li>
+           
+           <!--search form-->
+          <li>
+            <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
+              
+              <%= text_field_tag('q', nil, placeholder: "Search", class: "form-control") %>
+              <%= submit_tag("Go", class: "btn btn-default") %>
+            <% end %>
+          </li>
         </ul>
       
       </div><!-- /navbar collapse-->

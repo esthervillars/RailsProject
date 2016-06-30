@@ -38,6 +38,15 @@
             
           <li><%= link_to 'Orders', orders_path %></li>
           
+          <!--search form-->
+          <li>
+            <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
+              
+              <%= text_field_tag('q', nil, placeholder: "Search", class: "form-control") %>
+              <%= submit_tag("Go", class: "btn btn-default") %>
+            <% end %>
+          </li>
+          
         </ul>
       
       </div><!-- /navbar collapse-->  
@@ -46,6 +55,8 @@
   </nav><!--close navigation bar-->
 	
 <%= yield %>
+
+<%= link_to 'Landing', static_pages_landing_page_path %>
 
 	<!--footer nav bar-->
   <footer class="footer">

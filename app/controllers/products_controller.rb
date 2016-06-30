@@ -4,9 +4,27 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.all
-    #to specify another layout other than application, this can be done using render layout:
+    
+    #check rails environment and run seach form
+    if Rails.env.development?
+      if params[:q]
+        search_term = params[:q]
+        @products = Product.where("name LIKE ?", "%#{search_term}%")
+      else
+        @products = Product.all
+      end
+    else
+      if params[:q]
+        search_term = params[:q]
+        @products = Product.where("name ilike ?", "%#{search_term}%")
+      else
+        @products = Product.all
+      end
+    end
+    
     render layout: "products"
+    #to specify another layout other than application, this can be done using render layout:
+
   end
 
   # GET /products/1
