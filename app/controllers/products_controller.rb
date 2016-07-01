@@ -6,20 +6,16 @@ class ProductsController < ApplicationController
   def index
     
     #check rails environment and run seach form
-    if Rails.env.development?
-      if params[:q]
-        search_term = params[:q]
+    
+    if params[:q]
+      search_term = params[:q]
+      if Rails.env.development?
         @products = Product.where("name LIKE ?", "%#{search_term}%")
       else
-        @products = Product.all
+        @products = Product.where("name ilike ?", "%#{search_term}%")
       end
     else
-      if params[:q]
-        search_term = params[:q]
-        @products = Product.where("name ilike ?", "%#{search_term}%")
-      else
-        @products = Product.all
-      end
+      @products = Product.all
     end
     
     render layout: "products"
