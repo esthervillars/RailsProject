@@ -1,4 +1,4 @@
-class UserMailer < ApplicationMailer
+class UserMailer < BaseMailer
 
 	default from: "eaton.cw@gmail.com"
 	
