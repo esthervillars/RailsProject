@@ -1,30 +1,15 @@
 <div class="jumbotron">
-	<div class="container">
+	<div class="container splash">
 		<h1>Welcome to Fruitree</h1>
+		<div class="row space">
+			<div class="col-sm-12">
 
-		<h2>A community fruit tree mapper and shop for everything fruit picking</h2>
-		<%= image_tag("jumbotree.png", class: "img-responsive jumbotree center-block") %>
-	</div>
-</div>
-
-<!--contact section-->
-<div class="container">
-	<h1>Contact us</h1>
-	<div class="row">
-		<div class="col-md-6">
-			<%= flash[:notice] %>
-
-			<%= bootstrap_form_tag url: "/static_pages/thank_you", layout: :horizontal do |f| %>
-				<%= f.text_field :name, label: "Name", placeholder: "Enter name" %>
-		  	<%= f.email_field :email, label: "Email", placeholder: "Enter email" %>
-		  	<%= f.text_area :message, label: "Message", placeholder: "Enter message" %>
-				<%=f.form_group do %>
-					<%= f.submit "Send", class: "btn btn-success" %>
-				<% end %>
-			<% end %>
+				<h2>A community mapper and shop for everything foraging</h2>
+			</div>
 		</div>
+		
 	</div>
-
 </div>
+
 
 

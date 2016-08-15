@@ -1,0 +1,26 @@
+<div class="container">
+<h2>Sign up</h2>
+
+<div class="row sectionPadding">
+    <div class="col-md-12">
+
+      <%= bootstrap_form_for(resource, as: resource_name, url: registration_path(resource_name), layout: :horizontal, label_col: "col-md-1", control_col: "col-md-4") do |f| %>
+        
+        <%= devise_error_messages! %>
+
+        <%= f.email_field :email, label: "Email" %>
+        
+        <%= f.password_field :password, label: "Password", autocomplete: "off", help: "must be at least #{@minimum_password_length} characters long" %>
+
+        <%= f.password_field :password_confirmation, label: "Password confirm", autocomplete: "off" %>
+        
+        <%=f.form_group do %>
+          <%= f.submit "Sign up" %>
+        <% end %>
+          
+      <% end %>
+
+      <%= render "devise/shared/links" %>
+    </div>
+  </div>
+</div>

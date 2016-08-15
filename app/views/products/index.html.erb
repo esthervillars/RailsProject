@@ -1,9 +1,17 @@
+<div class="container space search">
+<div class="row pull-right">
+<div class="col-sm-12">
+  <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
+              
+    <%= text_field_tag('q', nil, placeholder: "Search", class: "form-control") %>
+    <%= submit_tag("Go", class: "btn btn-default") %>
+  <% end %>
+</div>
+</div>
+</div>
+
 <div class="container">
-  <p id="notice"><%= notice %></p>
-
   <h1>Fruitree Products</h1>
-  
-
 </div>
 
 <div class="container">

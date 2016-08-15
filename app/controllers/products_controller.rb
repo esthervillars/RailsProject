@@ -1,9 +1,12 @@
 class ProductsController < ApplicationController
+  layout "application"
   before_action :set_product, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!
 
   # GET /products
   # GET /products.json
   def index
+
     
     #check rails environment and run seach form
     
@@ -18,7 +21,7 @@ class ProductsController < ApplicationController
       @products = Product.all
     end
     
-    render layout: "products"
+    
     #to specify another layout other than application, this can be done using render layout:
 
   end

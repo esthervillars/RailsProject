@@ -17,9 +17,14 @@
 </head>
 <body>
 
-	<!--nav bar-->
+	
+  
+  <!--nav bar-->
+  <div class="topNav">
+  
   <nav class = "navbar navbar-default navbar-fixed-top">
     <div class = "container-fluid">
+    <div class="row">
       <div class = "navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
@@ -28,42 +33,59 @@
           <span class="icon-bar"></span>
         </button>
         <%= link_to static_pages_index_path, class:"navbar-brand" do %>
-          <i class="fa fa-tree"></i> Fruitree
+          <i class="fa fa-tree fa-lg"></i><span class="logoName">Fruitree</span>
         <% end %>
       
       </div><!-- /navbar-header-->
 
         
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class = "nav navbar-nav navbar-right">
+        <ul class = "nav navbar-nav navbar-right navLinks">
             
-          <li><%= link_to 'About', static_pages_about_path %></li>
-          <li><%= link_to 'Contact', static_pages_contact_path %></li>
+          <li><%= link_to 'Map', static_pages_about_path %></li>
+          <li><%= link_to 'Blog', static_pages_contact_path %></li>
           <li><%= link_to 'Products', products_path %></li>
-           
-           <!--search form-->
-          <li>
-            <%= form_tag("/products", method: "get", class: "navbar-form navbar-left", role: "search") do %>
-              
-              <%= text_field_tag('q', nil, placeholder: "Search", class: "form-control") %>
-              <%= submit_tag("Go", class: "btn btn-default") %>
-            <% end %>
-          </li>
         </ul>
+      </div>
+      </div><!--/row-->
+
+          <div class="row">
+        <ul class = "nav navbar-nav navbar-right">
+
+          
+            <% if user_signed_in? %>
+              <li class="welcome"><%= "Hello #{current_user.email}" %></li>
+              <li><%= link_to('Logout', destroy_user_session_path, :method => :delete) %></li>
+            <% else %>
+              <li><%= link_to('Login', new_user_session_path) %></li>
+            <% end %>
+          
+
+        </ul>
+        </div>
       
       </div><!-- /navbar collapse-->
     </div><!-- /container-fluid-->
   </nav><!--close navigation bar-->
+  </div><!--/ topNav-->
 	
+  <!--flash notifications-->
+  <%= render 'layouts/messages' %>
 <%= yield %>
 
 	<!--footer nav bar-->
   <footer class="footer">
-    <nav class = "navbar navbar-inverse navbar-static-bottom" role="navigation"><!--nav bar-->
+    <nav class = "navbar" role="navigation"><!--nav bar-->
       <div class = "container footpad">
         <div class="row">
-          <div class="col-xs-12 copyright">
-            <p class="text-muted">&copy; Fruitree 2016</p>
+          <div class="col-xs-3">
+            <ul class="nav nav-pills nav-stacked">
+              <li role="presentation"><%= link_to 'Contact', static_pages_contact_path %></li>
+              <li role="presentation"><%= link_to 'About us', static_pages_about_path %></li>
+            </ul>
+          </div>
+          <div class="col-xs-9 pull-right copyright">
+            <p>&copy; Fruitree 2016</p>
           </div><!--/col-->
         </div><!--/row-->
 

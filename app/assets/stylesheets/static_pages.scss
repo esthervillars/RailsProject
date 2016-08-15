@@ -3,23 +3,144 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 body {
-	padding-top: 50px; /*prevents fixed navbar from overlapping divs below */
+	padding-top: 130px; /*prevents fixed navbar from overlapping divs below */
+}
+
+.space {
+	padding-top: 40px;
+	padding-bottom: 20px;
+}
+
+/***navbar*///
+.topNav .navbar {
+	padding-top: 15px;
+	padding-bottom: 20px;
+}
+
+.topNav .row {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+.topNav .navbar-default {
+	border-top: none;
+	border-bottom: 3px solid #0b8044;
+	background-color: #fff;
+}
+
+.navbar a {
+	font-size: 1.25em;
+}
+
+.nav .welcome {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-right: 15px;
+	vertical-align: bottom;
+	border: none;
+	font-size: 1.25em;
+}
+
+.topNav .navbar .navLinks li {
+	border-right: 1px solid #0b8044;
+}
+
+.topNav .navbar .navLinks li:last-child {
+	border: none;
+}
+
+.topNav .navbar li:hover {
+	background: rgba(246,241,237,0.06);
+}
+
+.navbar-default .navbar-brand {
+	color: #0b8044;
+}
+
+.logoName {
+	font-size: 1.25em;
+	padding-left: 10px;
+	vertical-align: text-bottom;
+}
+.navbar {
+	margin-bottom: 0;
+}
+
+.search {
+	margin-right: 0;
 }
 
 .jumbotron {
 	text-align: center;
+	background-image: url(fruit_splash.jpg);
+	color: #fff;
 }
 
-.jumbotree {
-	width: 50%;
+.jumbotron h1 {
+	letter-spacing: .05em;
 }
+
+.splash {
+	padding-top: 150px;
+	padding-bottom: 250px;
+} 
+
+/***forms*///
+
+label {
+	font-size: 18px;
+	vertical-align: bottom;
+}
+label.required:after {
+	content:" *";
+}
+
+/***flash alerts***/
+
+.alert {
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+/*flash*/
+.alert-error {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-alert {
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    color: #b94a48;
+    text-align: left;
+ }
+
+.alert-success {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
+
+.alert-notice {
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+    color: #468847;
+    text-align: left;
+ }
 
 /***footer***/
 .footer .navbar {
 	border: none;
+	border-top: 3px solid #0b8044;
 	border-radius: 0;
 	margin-bottom: 0;
-	margin-top: 50px;
+	margin-top: 150px;
+	padding-top: 10px;
+	padding-bottom: 15px;
 }
 
 .footer .row {
@@ -45,4 +166,16 @@ body {
 
 .carousel-inner>.item>img {
 	margin: 0 auto;
+}
+
+@media screen and (min-width: 768px) {
+	.jumbotron .h1, .jumbotron h1 {
+    font-size: 80px;
+  }
+
+	.jumbotron .h2, .jumbotron h2 {
+    font-size: 42px;
+    line-height: 1.4;
+  }
+
 }
