@@ -32,13 +32,13 @@ body {
 	font-size: 1.25em;
 }
 
-.nav .welcome {
+.topNav .dropdown-menu {
+	padding: 10px 40px 10px 5px;
+	min-width: 200px;
+}
+
+.topNav .dropdown-menu a {
 	padding-top: 15px;
-	padding-bottom: 15px;
-	padding-right: 15px;
-	vertical-align: bottom;
-	border: none;
-	font-size: 1.25em;
 }
 
 .topNav .navbar .navLinks li {

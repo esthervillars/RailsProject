@@ -23,8 +23,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 #bootstrap gem for forms
 gem 'bootstrap_form'
-#devise for user auth
+#devise for user authentication
 gem 'devise'
+#CanCanCan for user authorization
+gem 'cancancan', '~> 1.10'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
