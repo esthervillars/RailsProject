@@ -8,6 +8,10 @@
         
         <%= devise_error_messages! %>
 
+        <%= f.text_field :first_name, label: "First name" %>
+
+        <%= f.text_field :last_name, label: "Last name" %>
+
         <%= f.email_field :email, label: "Email" %>
         
         <%= f.password_field :password, label: "Password", autocomplete: "off", help: "must be at least #{@minimum_password_length} characters long" %>
