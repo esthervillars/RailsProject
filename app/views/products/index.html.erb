@@ -9,7 +9,7 @@
       <%= form_tag("/products", method: "get", class: "navbar-form navbar-right", role: "search") do %>
                 
         <%= text_field_tag('q', nil, placeholder: "Search", class: "form-control") %>
-        <%= submit_tag("Go", class: "btn btn-default") %>
+        <%= submit_tag("Go", class: "btn btn-default", id: "search") %>
       <% end %>
     </div>
   </div>
@@ -26,10 +26,8 @@
       <%= render product %>
     <% end %>
   </div>
+
+  <%= will_paginate @products, renderer: BootstrapPagination::Rails %>
 </div>
 
 
-
-
-
-</div>

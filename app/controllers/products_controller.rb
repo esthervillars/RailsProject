@@ -12,12 +12,12 @@ class ProductsController < ApplicationController
     if params[:q]
       search_term = params[:q]
       if Rails.env.development?
-        @products = Product.where("name LIKE ?", "%#{search_term}%")
+        @products = Product.where("name LIKE ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 8)
       else
-        @products = Product.where("name ilike ?", "%#{search_term}%")
+        @products = Product.where("name ilike ?", "%#{search_term}%").paginate(:page => params[:page], :per_page => 8)
       end
     else
-      @products = Product.all
+      @products = Product.paginate(:page => params[:page], :per_page => 8)
     end
     
     
@@ -29,7 +29,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
-    @comments = @product.comments.order("created_at DESC")
+    @comments = @product.comments.order("created_at DESC").paginate(:page => params[:page], :per_page => 6)
   end
 
   # GET /products/new
