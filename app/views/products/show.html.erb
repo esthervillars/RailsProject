@@ -1,36 +1,64 @@
 <div class="container space">
-<p id="notice"><%= notice %></p>
+	<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+	<div class="row">
+		<div class="col-xs-6">
+			<%= image_tag(@product.image_url, class: "img-responsive") %>
+		</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+		<div class="col-xs-6">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1><%= @product.name %></h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<p>Overall Rating</p>
+				</div>
+			</div>
+			<div class="row space">
+				<div class="col-xs-12">
+					<p class="lead"><%= @product.description %></p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-xs-12">
+					<h4 ><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <%= @product.price %></h4>
+				</div>
+			</div>
 
+			
 
-  <%= image_tag(@product.image_url, class: "img-responsive products") %>
+			<div class="row space">
+				<div class="col-xs-12">
+					<a>Write a review</a>
+				</div>
+			</div>
+		</div>
+	</div>
 
+	<div class="row space">
+		<div class="col-xs-12">
+			<h3>Customer Reviews</h3>
+		</div>
+	</div>
 
-
-<p>
-  <strong>Colour:</strong>
-  <%= @product.colour %>
-</p>
-<p>
-  <strong>Size:</strong>
-  <%= @product.size %>
-</p>
-
-<p>
-  <strong>Price</strong>
-  <%= @product.price %>
-</p>
-
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+	<div class="row">
+		<div class="col-xs-4">
+			<p>*****</p>
+		</div>
+		<div class="col-xs-8">
+			<a>Review headline to take first x characters from review or to be clamped</a>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-12">
+			<a>Delete</a>
+		</div>
+	</div>
+</div>
+<div class="container space">
+	<%= link_to 'Edit', edit_product_path(@product) %> |
+	<%= link_to 'Back', products_path %>
 </div>

@@ -1,22 +1,28 @@
-<div class="col-sm-6 col-md-3">
-  <h2><%= product.name %></h2>
-  <p><%= product.description %></p>
-  <p><%= product.colour %></p>
-  <p><%= product.size %></p>
-  <p>$<%= product.price %></p>
-  <%= image_tag(product.image_url, class: "img-responsive products") %>
-    <div class="row space">
-      <div class="col-xs-12">
-        <table class="table">
-          <tbody>
-            <tr>
-              <td><%= link_to 'Show', product %></td>
-              <td><%= link_to 'Edit', edit_product_path(product) %></td>
-              <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-            </tr>
-          </tbody>
-        </table>
+<div class="col-xs-6 col-md-3">
+  <div class="thumbnail">
+    
+    <%= link_to image_tag(product.image_url, class: "img-responsive products"), product %>
+    <div class="captionColor">
+    <div class="caption">
+      <h2><%= link_to product.name, product %></h2>
+      <div id="clampDescription"><span class="lead"><%= product.description %></span></div>
+      <h4><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <%= product.price %></h4>
+
+      
+        <div class="row space">
+          <div class="col-xs-12">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <td><%= link_to 'Edit', edit_product_path(product) %></td>
+                  <td><%= link_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
       </div>
+    </div>
+    </div>
   </div>
 
 </div>

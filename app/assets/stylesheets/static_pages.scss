@@ -6,6 +6,10 @@ body {
 	padding-top: 130px; /*prevents fixed navbar from overlapping divs below */
 }
 
+a {
+	font-size: 1.25em;
+}
+
 .space {
 	padding-top: 40px;
 	padding-bottom: 20px;
@@ -28,18 +32,9 @@ body {
 	background-color: #fff;
 }
 
-.navbar a {
-	font-size: 1.25em;
-}
 
-.topNav .dropdown-menu {
-	padding: 10px 40px 10px 5px;
-	min-width: 200px;
-}
 
-.topNav .dropdown-menu a {
-	padding-top: 15px;
-}
+
 
 .topNav .navbar .navLinks li {
 	border-right: 1px solid #0b8044;
@@ -66,9 +61,30 @@ body {
 	margin-bottom: 0;
 }
 
-.search {
-	margin-right: 0;
+.lowerNav .signedIn {
+	width: 300px;
 }
+
+.lowerNav .dropdown-menu li {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.lowerNav .dropdown-menu a {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.login {
+	text-align: right;
+}
+
+.navbar-form {
+	margin-top: 25px;
+	text-align: right;
+}
+
+
 
 .jumbotron {
 	text-align: center;
@@ -85,7 +101,32 @@ body {
 	padding-bottom: 250px;
 } 
 
-/***forms*///
+/***Products***/
+
+/*clamp product description*/
+#clampDescription {
+	white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  max-height: 300px;
+}
+
+/*restrict product height*/
+.products {
+	max-height: 200px;
+}
+
+.thumbnail {
+	padding-right: 0;
+	padding-left: 0;
+	padding-bottom: 0;
+}
+
+.thumbnail .captionColor {
+	background-color: #fdfdfd;
+}
+
+/***forms***/
 
 label {
 	font-size: 18px;
