@@ -15,6 +15,11 @@ a {
 	padding-bottom: 20px;
 }
 
+.space2 {
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
 /***navbar*///
 .topNav .navbar {
 	padding-top: 15px;
@@ -134,6 +139,11 @@ label {
 }
 label.required:after {
 	content:" *";
+}
+
+/*rating*/
+.rated {
+	padding-bottom: 20px;
 }
 
 /***flash alerts***/

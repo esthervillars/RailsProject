@@ -5,6 +5,7 @@
     <div class="captionColor">
     <div class="caption">
       <h2><%= link_to product.name, product %></h2>
+      <div class="rated" data-score="<%= product.average_rating %>"></div>
       <div id="clampDescription"><span class="lead"><%= product.description %></span></div>
       <h4><span class="glyphicon glyphicon-usd" aria-hidden="true"></span> <%= product.price %></h4>
 

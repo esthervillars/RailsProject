@@ -14,7 +14,7 @@
 			</div>
 			<div class="row">
 				<div class="col-xs-12">
-					<p>Overall Rating</p>
+					<div class="rated" data-score="<%= @product.average_rating %>"></div>
 				</div>
 			</div>
 			<div class="row space">
@@ -32,7 +32,7 @@
 
 			<div class="row space">
 				<div class="col-xs-12">
-					<a>Write a review</a>
+					<%= render 'new_comment' %>
 				</div>
 			</div>
 		</div>
@@ -44,14 +44,8 @@
 		</div>
 	</div>
 
-	<div class="row">
-		<div class="col-xs-4">
-			<p>*****</p>
-		</div>
-		<div class="col-xs-8">
-			<a>Review headline to take first x characters from review or to be clamped</a>
-		</div>
-	</div>
+	<%= render 'comments' %>
+
 	<div class="row">
 		<div class="col-xs-12">
 			<a>Delete</a>

@@ -7,7 +7,6 @@ class ProductsController < ApplicationController
   # GET /products.json
   def index
 
-    
     #check rails environment and run seach form
     
     if params[:q]
@@ -22,6 +21,7 @@ class ProductsController < ApplicationController
     end
     
     
+    
     #to specify another layout other than application, this can be done using render layout:
 
   end
@@ -29,6 +29,7 @@ class ProductsController < ApplicationController
   # GET /products/1
   # GET /products/1.json
   def show
+    @comments = @product.comments.order("created_at DESC")
   end
 
   # GET /products/new
