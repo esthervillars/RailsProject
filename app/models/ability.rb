@@ -12,6 +12,7 @@ class Ability
             can :manage, User, id: user.id
             can :manage, Order, id: user.id
             can :read, Comment, id: user.id
+        end
         
         #:manage is any action available for user, second parameter is restriction - user must have same ID as the user record
     
