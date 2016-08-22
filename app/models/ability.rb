@@ -5,8 +5,14 @@ class Ability
     # Define abilities/permissions for the passed in user here. For example:
     #
         user ||= User.new # guest user (not logged in)
-        can :manage, User, id: user.id
-        can :manage, Order, id: user.id
+        
+        if user.admin?
+            can :manage, :all
+        else
+            can :manage, User, id: user.id
+            can :manage, Order, id: user.id
+            can :read, Comment, id: user.id
+        
         #:manage is any action available for user, second parameter is restriction - user must have same ID as the user record
     
     #   if user.admin?
