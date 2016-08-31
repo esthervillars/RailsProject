@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
 	has_many :orders
-	has_many :comments
+	has_many :comments, as: :commentable
 
 	validates :name, presence: true
 	validates :price, presence: true

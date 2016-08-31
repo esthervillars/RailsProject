@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users, :path => '', :path_names => {:sign_in => 'login', :sign_out => 'logout', registration: 'register'}
+  
   resources :users
   
   resources :products do
@@ -8,6 +9,10 @@ Rails.application.routes.draw do
   end
 
   resources :orders, only: [:index, :show, :create, :destroy]
+
+  resources :posts do
+    resources :comments
+  end
 
   
   get 'static_pages/about'

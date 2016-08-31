@@ -1,0 +1,20 @@
+<div class="postComments">
+
+    <% @comments.each do |comment| %>
+        <div class="row">
+            
+            <p><%= comment.user.email %><small><em> <%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small> 
+            	
+                <% if signed_in? && current_user.admin? %>
+            		<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+            	<% end %>
+                
+            </p>
+            
+            <div class="space2"></div>
+
+            <p><%= comment.body %></p>
+            <hr>
+        </div>
+    <% end %>
+</div>

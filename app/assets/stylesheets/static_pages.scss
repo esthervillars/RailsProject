@@ -131,12 +131,17 @@ a {
 	background-color: #fdfdfd;
 }
 
+.paddingBottom {
+	padding-bottom: 60px;
+}
+
 /***forms***/
 
 label {
 	font-size: 18px;
 	vertical-align: bottom;
 }
+
 label.required:after {
 	content:" *";
 }

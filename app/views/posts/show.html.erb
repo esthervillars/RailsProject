@@ -1,0 +1,46 @@
+<div class="container space">
+
+	<%= image_tag(@post.img_url, class: "img-responsive") %>
+	
+	<div class="row">
+		<div class="col-xs-12">
+			<div class="row">
+				<div class="col-xs-12">
+					<h1><%= @post.title %></h1>
+					<p>Written <%= time_ago_in_words(@post.created_at) %> ago</p>
+				</div>
+			</div>
+			
+			<div class="row space">
+				<div class="col-xs-12">
+					<p class="lead"><%= @post.body %></p>
+				</div>
+			</div>
+			
+
+			
+
+			<div class="row space">
+				<div class="col-xs-12">
+					<%= render 'new_comment' %>
+				</div>
+			</div>
+	</div>
+
+	<div class="row space">
+		<div class="col-xs-12">
+			<h3>Comments</h3>
+		</div>
+	</div>
+
+	<%= render 'comments' %>
+	<% if false %>
+	<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+	<% end %>
+
+<%= link_to 'Back', posts_path %>
+	
+	
+
+	
+</div>

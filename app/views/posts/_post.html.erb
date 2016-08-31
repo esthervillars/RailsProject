@@ -1,0 +1,29 @@
+<div class="col-md-6 paddingBottom">
+  
+    
+      <div class="focuspoint" data-focus-x="1" data-focus-y="1" data-image-w="400" data-image-h="300">
+
+      <%= link_to image_tag(post.img_url), post %>
+      </div>
+    
+    <div class="captionColor">
+      <div class="caption">
+        <h2><%= link_to post.title, post %></h2>
+        <p><%= time_ago_in_words(post.created_at) %> ago</p>
+        
+        <div id="clampDescription"><span class="lead"><%= post.body %></span></div>
+
+      </div>
+    </div>
+
+    <table class="table">
+      <tbody>
+        <tr>
+          <td><%= link_to 'Edit', edit_post_path(post) %></td>
+          <td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      </tbody>
+    </table> 
+  
+  
+</div>

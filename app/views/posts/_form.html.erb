@@ -1,0 +1,23 @@
+<%= bootstrap_form_for(@post, layout: :horizontal, label_col: "col-md-2", control_col: "col-md-6") do |f| %>
+  
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= f.text_field :title, label: "Title" %>
+  <%= f.text_area :body, label: "Body" %>
+  <%= f.url_field :img_url, label: "Image url" %>
+  <%=f.form_group do %>
+    <%= f.primary %>
+  <% end %>
+  
+  
+<% end %>
