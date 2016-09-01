@@ -10,5 +10,11 @@ class UserMailer < BaseMailer
 			
 	end
 
+	def welcome(user)
+		@appname = "Fruitree"
+		mail( :to => user.email,
+					:subject => "Welcome to #{@appname}!")
+	end
+
 	
 end
