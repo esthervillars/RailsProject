@@ -32,6 +32,12 @@ class CommentsController < ApplicationController
     
 		respond_to do |format|
       if @comment.update(comment_params)
+        def report_comment
+    			@report = params[:report]
+					@user_id = params[:user_id]
+					@message = params[:body]
+					UserMailer.report_comment(@report, @user_id, @message).deliver_now
+				end
         format.html { redirect_to @commentable, notice: 'Comment was successfully reported as abusive.' }
         format.json { render :show, status: :ok, location: @commentable }
       else
@@ -42,12 +48,7 @@ class CommentsController < ApplicationController
 
   end
 
-  def report_comment
-    @report = params[:report]
-		@user_id = params[:user_id]
-		@message = params[:body]
-		UserMailer.report_abuse(@report, @user_id, @message).deliver_now
-  end
+  
 
 	# DELETE
 	def destroy

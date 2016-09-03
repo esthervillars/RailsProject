@@ -10,6 +10,8 @@
       <div class="caption">
         <h2><%= link_to post.title, post %></h2>
         <p><%= time_ago_in_words(post.created_at) %> ago</p>
+        <p>by <%= post.user.email %></p>
+        
         
         <div id="clampDescription"><span class="lead"><%= post.body %></span></div>
 

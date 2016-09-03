@@ -5,7 +5,7 @@ class PostsController < ApplicationController
 	# Not using callbacks in this controller for demonstration, see @post = Post.find(params[:id]) repeated in each action
 	
 	def index
-
+	 
 		if params[:q]
       search_term = params[:q]
       if Rails.env.development?
@@ -34,7 +34,9 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new(post_params)
+		
+		@post = Post.new(post_params.merge(user_id: current_user.id))
+
 		
 		respond_to do |format|
       if @post.save
@@ -76,5 +78,6 @@ class PostsController < ApplicationController
 	private
 		def post_params
 			params.require(:post).permit(:title, :body, :img_url)
+
 		end
 end

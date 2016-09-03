@@ -7,7 +7,7 @@
 			<div class="row">
 				<div class="col-xs-12">
 					<h1><%= @post.title %></h1>
-					<p>Written <%= time_ago_in_words(@post.created_at) %> ago</p>
+					<p>Written <%= time_ago_in_words(@post.created_at) %> ago by <%= @post.user.email %></p>
 				</div>
 			</div>
 			
