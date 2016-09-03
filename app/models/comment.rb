@@ -6,7 +6,7 @@ class Comment < ActiveRecord::Base
   validates :user_id, presence: true
   
 
-  validates :body, presence: true, length: { minimum: 5 }
+  #validates :body, presence: true, length: { minimum: 5 }
 
   #potentially add conditional to rating if comment model is used for other purposes, like users sending each other messages.
   

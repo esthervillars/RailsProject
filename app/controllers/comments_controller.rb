@@ -21,8 +21,33 @@ class CommentsController < ApplicationController
 			end
 		end
 
-		
 	end
+
+
+  def edit
+  end
+
+	def update
+		@comment = Comment.find(params[:id])
+    
+		respond_to do |format|
+      if @comment.update(comment_params)
+        format.html { redirect_to @commentable, notice: 'Comment was successfully reported as abusive.' }
+        format.json { render :show, status: :ok, location: @commentable }
+      else
+        format.html { render :edit }
+        format.json { render json: @commentable.errors, status: :unprocessable_entity }
+      end
+    end
+
+  end
+
+  def report_comment
+    @report = params[:report]
+		@user_id = params[:user_id]
+		@message = params[:body]
+		UserMailer.report_abuse(@report, @user_id, @message).deliver_now
+  end
 
 	# DELETE
 	def destroy
@@ -41,6 +66,6 @@ class CommentsController < ApplicationController
 		end
 
 		def comment_params
-     params.require(:comment).permit(:body, :rating)
+     params.require(:comment).permit(:body, :rating, :report)
     end
 end

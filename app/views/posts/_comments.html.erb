@@ -2,19 +2,43 @@
 
     <% @comments.each do |comment| %>
         <div class="row">
+            <div class="col-xs-10">
             
-            <p><%= comment.user.email %><small><em> <%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small> 
-            	
-                <% if signed_in? && current_user.admin? %>
-            		<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
-            	<% end %>
+                <p><%= comment.user.email %><small><em> <%= "#{time_ago_in_words(comment.created_at)} ago" %></em></small> 
+                	
+                    <% if signed_in? && current_user.admin? %>
+                		<%= link_to ('<span class="glyphicon glyphicon-remove"></span>').html_safe, post_comment_path(@post, comment), method: :delete, data: { confirm: 'Are you sure?' } %>
+                	<% end %>
+                    
+                    <% if comment.report == true %> 
+                        <em>Reported as abusive <%= comment.report %></em>
+                    <% end %>
+
+                    
+                </p>
+            </div>
+            <div class="col-xs-2">
+
+
                 
-            </p>
+                    <%= bootstrap_form_for([@post, comment], layout: :inline) do |f| %>
+                        <%= f.form_group :report do %>
+                            <%= f.check_box :report, label: "Report abuse" %>
+                        <% end %>
+                    
+                    
+                        <%=f.form_group do %>
+                          <%= f.submit "Report" %>
+                        <% end %>
+                    
+  <% end %>
+            </div>
+        </div>
             
             <div class="space2"></div>
 
             <p><%= comment.body %></p>
-            <hr>
-        </div>
+                <hr>
+            </div>
     <% end %>
 </div>

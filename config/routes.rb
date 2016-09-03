@@ -14,6 +14,7 @@ Rails.application.routes.draw do
     resources :comments
   end
 
+  post 'comments/report_comments'
   
   get 'static_pages/about'
 

@@ -46,11 +46,7 @@
 	<%= render 'comments' %>
 	<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
 
-	<div class="row">
-		<div class="col-xs-12">
-			<a>Delete</a>
-		</div>
-	</div>
+	
 </div>
 <div class="container space">
 	<%= link_to 'Edit', edit_product_path(@product) %> |
