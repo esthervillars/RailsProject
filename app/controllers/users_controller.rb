@@ -6,7 +6,13 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
-    @users = User.all
+    
+    if current_user.admin? 
+      @users = User.all
+    else
+      redirect_to "/static_pages/landing_page"
+    end
+
   end
 
   # GET /users/1

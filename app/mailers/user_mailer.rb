@@ -17,10 +17,10 @@ class UserMailer < BaseMailer
 	end
 
 	def report_comment(user)
-		@comment = comment
+		
 		mail(:from => user.email,
 			:to => 'eaton.cw@gmail.com',
-			:subject => "Report of comment abuse from #{@name}")
+			:subject => "Report of comment abuse")
 			
 	end
 
