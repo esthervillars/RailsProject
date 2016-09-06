@@ -31,6 +31,14 @@ gem 'cancancan', '~> 1.10'
 gem 'will_paginate', '~> 3.1.0'
 #will_paginate-bootstrap
 gem 'will_paginate-bootstrap'
+#paperclip for file uploads
+gem "paperclip", "~> 5.0.0"
+#image storage using Amazon's S3
+gem 'aws-sdk', '~> 2.5', '>= 2.5.8'
+#simpleform gem
+gem 'simple_form'
+#nested forms
+gem "cocoon"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

@@ -1,0 +1,30 @@
+<div class="container space">
+	<h1><%= @recipe.title %></h1>
+	<p><%= simple_format @recipe.description %></p>
+	<%= image_tag @recipe.image.url(:medium) %>
+	<div id="ingredients">
+	<h2>Ingredients</h2>
+		<ul>
+			<% @recipe.ingredients.each do |ingredient|%>
+				<li><%= ingredient.name %></li>
+			<% end %>
+		</ul>
+	</div>
+
+	<div id="directions">
+	<h2>Directions</h2>
+		<ul>
+			<% @recipe.directions.each do |direction| %>
+				<li><%= direction.step %></li>
+			<% end %>
+		</ul>
+	</div>
+
+<div class="container space">
+<%= link_to 'Edit', edit_recipe_path(@recipe), class: "btn btn-default btn-lg" %>
+<%= link_to 'Delete', recipe_path, class: "btn btn-default btn-lg", method: :delete, data: { confirm: 'Are you sure you want to delete #{@recipe}?' } %>
+</div>
+
+<div class="container space">
+<%= link_to 'Back', recipes_path, class: "btn btn-default btn-lg" %>
+</div>

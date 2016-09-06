@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160903204932) do
+ActiveRecord::Schema.define(version: 20160906161716) do
 
   create_table "comments", force: :cascade do |t|
     t.text     "body"
@@ -26,6 +26,24 @@ ActiveRecord::Schema.define(version: 20160903204932) do
 
   add_index "comments", ["commentable_id", "commentable_type"], name: "index_comments_on_commentable_id_and_commentable_type"
   add_index "comments", ["user_id"], name: "index_comments_on_user_id"
+
+  create_table "directions", force: :cascade do |t|
+    t.text     "step"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "directions", ["recipe_id"], name: "index_directions_on_recipe_id"
+
+  create_table "ingredients", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "ingredients", ["recipe_id"], name: "index_ingredients_on_recipe_id"
 
   create_table "orders", force: :cascade do |t|
     t.integer "user_id"
@@ -55,6 +73,20 @@ ActiveRecord::Schema.define(version: 20160903204932) do
     t.datetime "updated_at",                          null: false
     t.decimal  "price",       precision: 8, scale: 2
   end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.integer  "user_id"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  add_index "recipes", ["user_id"], name: "index_recipes_on_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

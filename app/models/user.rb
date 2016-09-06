@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
 	has_many :orders
 	has_many :comments
 	has_many :posts
+	has_many :recipes
 	
 end

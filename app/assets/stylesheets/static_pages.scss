@@ -4,10 +4,20 @@
 
 body {
 	padding-top: 130px; /*prevents fixed navbar from overlapping divs below */
+	font-family: 'Open Sans', sans-serif;
+}
+
+p {
+	font-size: 1.25em;
+
 }
 
 a {
 	font-size: 1.25em;
+}
+
+.fileUpload {
+	display: none;
 }
 
 .pagination a {
