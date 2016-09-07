@@ -1,7 +1,7 @@
 <div class="container space">
 	<h1><%= @recipe.title %></h1>
 	<p><%= simple_format @recipe.description %></p>
-	<%= image_tag @recipe.image.url(:medium) %>
+	<%= image_tag(@recipe.image.url(:large), class: "img-responsive") %>
 	<div id="ingredients">
 	<h2>Ingredients</h2>
 		<ul>

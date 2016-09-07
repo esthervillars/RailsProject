@@ -11,7 +11,7 @@ accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy:
 
 validates :title, :description, :image, presence: true
 
-has_attached_file :image, styles: { medium: "400x400#", large: "1000x1000#"}
+has_attached_file :image, styles: { medium: "400x400#", large: "1200x300#"}
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 end
