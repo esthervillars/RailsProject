@@ -1,24 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="container space">
+<h1>User information</h1>
+	<div class="row space">
+		<div class="col-md-6">
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+			<table class="table table-bordered">
+				<tbody>
+          <tr>
+						<td class="col-xs-4">First name</td>
+				  	<td class="col-xs-4"><%= @user.first_name %></td>
+					</tr>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+					<tr>
+					 <td class="col-xs-4">Last name</td>
+					 <td class="col-xs-4"><%= @user.last_name %></td>
+					</tr>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
+					<tr>
+					  <td class="col-xs-4">Email</td>
+					  <td class="col-xs-4"><%= @user.email %></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
 
+<div class="container">
 <%= link_to 'Edit', edit_user_path(@user) %> |
 
 <% if current_user.admin? %>
 	<%= link_to 'Back', users_path %>
 <% else %>
-	<%= link_to 'Back', :back %>
+	<%= link_to 'Back', root_path %>
 <% end %>
+</div>

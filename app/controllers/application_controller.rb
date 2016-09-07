@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
   #change authorization error to flash message
   rescue_from CanCan::AccessDenied do |exception|
-  redirect_to main_app.root_url, :alert => exception.message
-end
+  	redirect_to main_app.root_url, :alert => exception.message
+	end
 
 end
