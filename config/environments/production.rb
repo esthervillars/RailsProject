@@ -77,7 +77,7 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  config.action_mailer.default_url_options = { :host => "http:/fruitrees2.herokuapp.com" }
+  config.action_mailer.default_url_options = { :host => "fruitrees2.herokuapp.com" }
 
   #file storage sets Paperclip to upload using Amazon S3 by default
   config.paperclip_defaults = {
