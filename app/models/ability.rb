@@ -3,7 +3,7 @@ class Ability
 
 	def initialize(user)
 	# Define abilities/permissions for the passed in user here. For example:
-	#
+	# and changed tabs again
 		user ||= User.new # guest user (not logged in)
 		
 		if user.admin?
