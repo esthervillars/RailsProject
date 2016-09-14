@@ -4,43 +4,43 @@
 	
 	<div class="row">
 		<div class="col-xs-12">
-			<div class="row">
-				<div class="col-xs-12">
-					<h1><%= @post.title %></h1>
-					<p>Written <%= @post.created_at.strftime('%B %d') %> by <%= @post.user.email %></p>
-				</div>
-			</div>
-			
-			<div class="row space">
-				<div class="col-xs-12">
-					<p class="lead"><%= simple_format @post.body %></p>
-				</div>
-			</div>
-			
-
-			
-
-			<div class="row space">
-				<div class="col-xs-12">
-					<%= render 'new_comment' %>
-				</div>
-			</div>
+			<h1><%= @post.title %></h1>
+			<p>Written <%= @post.created_at.strftime('%B %d') %> by <%= @post.user.email %></p>
+		</div>
 	</div>
+	
+	<div class="row space">
+		<div class="col-xs-12">
+			<p class="lead"><%= simple_format @post.body %></p>
+		</div>
+	</div>
+			
 
 	<div class="row space">
 		<div class="col-xs-12">
-			<h3>Comments</h3>
+			<a data-toggle="collapse" href="#collapseComments" aria-expanded="false" aria-controls="collapseComments">Show comments</a>
 		</div>
 	</div>
 
-	<%= render 'comments' %>
-	<% if false %>
-	<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
-	<% end %>
+	<div class="collapse" id="collapseComments">
+		<div class="row space" id="collapseComments">
+			<div class="col-xs-12">
+				<%= render 'new_comment' %>
+			</div>
+		</div>
+		
+		<div class="row space">
+			<div class="col-xs-12">
+				<%= render 'comments' %>
+			</div>
+		</div>
+		
+		
+		<%= will_paginate @comments, renderer: BootstrapPagination::Rails %>
+		
+	</div>
+</div>
 
-<%= link_to 'Back', posts_path %>
-	
-	
-
-	
+<div class="container">
+	<%= link_to 'Back', posts_path %>
 </div>

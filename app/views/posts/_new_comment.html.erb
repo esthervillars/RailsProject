@@ -1,7 +1,7 @@
 <% if signed_in? %>
   
   <h4>Add a comment</h4>
-  <%= bootstrap_form_for([@post, @comments.build]) do |f| %>
+  <%= bootstrap_form_for([@post, @comments.build], remote: true) do |f| %>
     
     <% if @post.errors.any? %>
       <div id="error_explanation">

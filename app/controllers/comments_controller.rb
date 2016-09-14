@@ -15,6 +15,7 @@ class CommentsController < ApplicationController
 			if @comment.save
 				format.html { redirect_to @commentable, notice: 'Created successfully.' }
 				format.json { render :show, status: :created, location: @commentable }
+				format.js # render comment ajax
 			else
 				format.html { redirect_to @commentable, alert: 'Not saved successfully.' }
 				format.json { render json: @commentable.errors, status: :unprocessable_entity }
